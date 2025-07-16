@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# This script lists non-hidden files and displays name parts after the first dash
-
-for file in *-*; do
-    name_part="${file#*-}"
-    echo "$name_part"
+# List each file/folder in the current directory
+for file in *; do
+  if [[ "$file" == *-* ]]; then
+    echo "${file#*-}"
+  else
+    echo "$file"
+  fi
 done
